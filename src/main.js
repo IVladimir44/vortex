@@ -1,4 +1,30 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import Home from './components/pages/Home.vue';
+import Messages from './components/pages/Messages.vue';
+import Like from './components/pages/Like.vue';
+import Login from './components/pages/Login.vue';
+import AddProduct from './components/pages/AddProduct.vue';
+
+
+import { createWebHistory, createRouter } from "vue-router";
+
+const routes = [
+    { path: '/', name: 'Home', component: Home },
+    { path: '/', name: 'Messages', component: Messages },
+    { path: '/', name: 'Like', component: Like },
+    { path: '/', name: 'Login', component: Login },
+    { path: '/', name: 'AddProduct', component: AddProduct },
+];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+
+const app = createApp(App);
+
+app.use(router);
+
+app.mount('#app');
