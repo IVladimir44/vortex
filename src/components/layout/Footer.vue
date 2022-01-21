@@ -17,7 +17,8 @@ div {
 .copyright {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;line-height: 25px;
     color: #FFFF;
+
 }
 </style>

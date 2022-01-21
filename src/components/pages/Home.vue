@@ -8,16 +8,16 @@
 <div class="products">
 <ul class="products_list">
     <li>
-        <img src="../../assets/noname.jpg" alt="product_1"> <p>Объявление_1</p>
+        <img class="products_img" src="../../assets/noname.jpg" alt="product_1"> <p>Объявление_1</p>
     </li>
     <li>
-        <img src="../../assets/noname.jpg" alt="product_2"> <p>Объявление_2</p>
+        <img class="products_img" src="../../assets/noname.jpg" alt="product_2"> <p>Объявление_2</p>
     </li>
     <li>
-        <img src="../../assets/noname.jpg" alt="product_3"> <p>Объявление_3</p>
+        <img class="products_img" src="../../assets/noname.jpg" alt="product_3"> <p>Объявление_3</p>
     </li>
     <li>
-        <img src="../../assets/noname.jpg" alt="product_4"> <p>Объявление_4</p>
+        <img class="products_img" src="../../assets/noname.jpg" alt="product_4"> <p>Объявление_4</p>
     </li>
 </ul>
 </div>
@@ -42,7 +42,7 @@ form {
   height: 42px;
   padding-left: 10px;
   border: 2px solid #002F34;
-  border-radius: 5px;
+  border-radius: 6px;
   outline: none;
   background: #FFFF;
   color: #002F34;
@@ -71,6 +71,8 @@ form {
 }
 .products_list li{
     border: 2px solid #002F34 ;
+    border-radius: 6px;
+    padding: 15px;
 }
 </style>
 
