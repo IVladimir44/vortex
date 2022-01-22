@@ -1,5 +1,5 @@
 <template>
-    <div>Избранное</div>
+    <div>Избранные объявления</div>
 </template>
 
 <script>

@@ -7,7 +7,7 @@
             <router-link :to="{ name: 'Messages' }">Сообщения</router-link>
         </div>
         <div class="like">
-            <router-link :to="{ name: 'Like' }">Избранное</router-link>
+            <router-link :to="{ name: 'Like' }">Избранные</router-link>
         </div>
         <div class="login">
             <router-link :to="{ name: 'Login' }">Мой профиль</router-link>

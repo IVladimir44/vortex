@@ -8,16 +8,16 @@
 <div class="products">
 <ul class="products_list">
     <li>
-        <img class="products_img" src="../../assets/noname.jpg" alt="product_1"> <p>Объявление_1</p>
+        <img class="products_img" src="../../assets/noname.png" alt="product_1"> <p>Объявление_1</p>
     </li>
     <li>
-        <img class="products_img" src="../../assets/noname.jpg" alt="product_2"> <p>Объявление_2</p>
+        <img class="products_img" src="../../assets/noname.png" alt="product_2"> <p>Объявление_2</p>
     </li>
     <li>
-        <img class="products_img" src="../../assets/noname.jpg" alt="product_3"> <p>Объявление_3</p>
+        <img class="products_img" src="../../assets/noname.png" alt="product_3"> <p>Объявление_3</p>
     </li>
     <li>
-        <img class="products_img" src="../../assets/noname.jpg" alt="product_4"> <p>Объявление_4</p>
+        <img class="products_img" src="../../assets/noname.png" alt="product_4"> <p>Объявление_4</p>
     </li>
 </ul>
 </div>
@@ -30,7 +30,7 @@
 <style>
 * {box-sizing: border-box;}
 body{margin: 0;}
-div {padding: 30px 0}
+div {padding: 0px 0}
 form {
   position: relative;
   width: 400px;
