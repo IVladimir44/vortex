@@ -1,5 +1,4 @@
 <template>
-
 <div class="background">
         <div class="title_wrapper">
             <p class="add_title">Создать объявление</p>
@@ -83,7 +82,6 @@
 <style scoped>
 .background {
     background-color: #f2f4f5;
-    padding-top: 48px ;
     padding-bottom: 48px;
 }
 .add_title {
@@ -94,6 +92,7 @@
     font-weight: 700;
     color: rgb(0, 47, 52);
     margin: 0 0 30px 142px;
+    padding-top: 48px ;
 }
 .wrapper {
   display: flex;

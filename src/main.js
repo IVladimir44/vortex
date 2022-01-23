@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap"
 import Home from './components/pages/Home.vue';
 import Messages from './components/pages/Messages.vue';
 import Like from './components/pages/Like.vue';
