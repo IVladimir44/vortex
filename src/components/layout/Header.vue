@@ -70,7 +70,7 @@ export default {
 }
 .nav_menu a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FFFF;
 }
 .nav_menu a:hover {
     color: #7F9799;
@@ -83,6 +83,10 @@ export default {
 }
 .header_logo {
     margin-right: 60px;
+}
+.languages {
+    color: #FFFF;
+    cursor: pointer;
 }
 button {
     color: #002F34;

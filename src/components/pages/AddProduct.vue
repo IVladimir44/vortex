@@ -18,6 +18,33 @@
             <p class="photo_subtitle">Первое фото будет на обложке объявления. Перетащите, чтобы изменить порядок.</p>
             <div class="photos">
                 <ul class="photos_list">
+                    <li class="photo">
+                        Добавить фото
+                        <input class="add_photo" type="file" accept="image/heic, image/png, image/jpeg, image/webp">
+                    </li>
+                    <li class="photo_2">
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+                <!-- <ul class="photos_list">
                     <li>
                         <img class="photo_img" src="../../assets/noname.png" alt="photo_1">
                     </li>
@@ -42,7 +69,7 @@
                     <li>
                         <img class="photo_img" src="../../assets/noname.png" alt="photo_8">
                     </li>
-                </ul>
+                </ul> -->
             </div>
         </div>        
     </div>
@@ -70,7 +97,7 @@
     <div class="wrapper">
         <div class="posting_buttons">
             <span class="preview"><i class="preview_link">Предосмотр</i></span>
-            <button class="send">Опубликовать</button>
+            <button type="submit" class="send">Опубликовать</button>
         </div>
     </div>
 </div>
@@ -170,6 +197,11 @@
     color: rgb(127, 151, 153);
     margin: 0px 0px 16px;
 }
+.photos {
+    display: inline-grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 16px;
+}
 .photos_list {
     display: inline-grid;
     grid-template-columns: repeat(4, auto);
@@ -184,6 +216,47 @@
     height: 140px;
     padding: 0;
     display: flex;
+}
+.photo {
+    border-radius: 4px;
+    background: rgb(200, 248, 246);
+    width: 160px;
+    height: 120px;
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+.add_photo {
+    position: absolute;
+    opacity: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    cursor: pointer;
+}
+.photo_2 {
+    border-radius: 4px;
+    background: rgb(242, 244, 245);
+    width: 159px;
+    height: 120px;
+    padding: 0px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
 }
 .description {
     padding: 32px;
