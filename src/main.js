@@ -8,6 +8,27 @@ import Like from './components/pages/Like.vue';
 import Login from './components/pages/Login.vue';
 import AddProduct from './components/pages/AddProduct.vue';
 import store from './components/store'
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCaxQZNDJaMKXFcavCum8XI_bBnJ_XfJrI",
+  authDomain: "vortex-344b6.firebaseapp.com",
+  projectId: "vortex-344b6",
+  storageBucket: "vortex-344b6.appspot.com",
+  messagingSenderId: "345306529159",
+  appId: "1:345306529159:web:2c09ab6a6a7dd2ad1ca722",
+  measurementId: "G-VMN5P7E1Z1"
+};
+
+// Initialize Firebase
+initializeApp(firebaseConfig);
+getAnalytics(app);
 
 
 import { createWebHistory, createRouter } from "vue-router";

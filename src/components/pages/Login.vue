@@ -49,7 +49,7 @@
   </label>
 </div>
 </div>
-  <button type="submit" class="btn btn-primary">Войти</button>
+  <button @click.prevent="login" class="btn btn-primary">Войти</button>
 </form>
     </div>
 </template>
@@ -63,6 +63,13 @@ export default {
             password: '',
             agreeWithSendEmail: false,
             gendere:'male',
+        }
+    },
+    methods: {
+        login() {
+            this.$store.dispatch('user/login', { email: this.email, password: this.password }).then((result) => {
+                console.log('login result', result)
+            })
         }
     }
 };

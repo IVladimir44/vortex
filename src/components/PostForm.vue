@@ -1,7 +1,7 @@
 <template>
     <form @submit.prevent="submit">
-        <input type="text" placeholder="title" v-model="title">
-        <input type="text" placeholder="body" v-model="body">
+        <input type="text" placeholder="title" v-model="title" required>
+        <input type="text" placeholder="body" v-model="body" required>
         <button type="submit">Создать пост</button>
     </form>
 </template>
@@ -37,5 +37,10 @@ input {
     border-radius: 2px;
     padding: 10px;
     margin-bottom: 10px;
+}
+button {
+    border: 1px solid rgb(223, 54, 54);
+    border-radius: 4px;
+    background-color: rgb(223, 54, 54);
 }
 </style>
