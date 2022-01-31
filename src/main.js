@@ -7,6 +7,7 @@ import Messages from './components/pages/Messages.vue';
 import Like from './components/pages/Like.vue';
 import Login from './components/pages/Login.vue';
 import AddProduct from './components/pages/AddProduct.vue';
+import store from './components/store'
 
 
 import { createWebHistory, createRouter } from "vue-router";
@@ -27,5 +28,7 @@ const router = createRouter({
 const app = createApp(App);
 
 app.use(router);
+
+app.use(store);
 
 app.mount('#app');

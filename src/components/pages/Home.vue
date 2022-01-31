@@ -39,14 +39,43 @@
         </ul>
       </div>
     </div>
+    <div id="home">
+      <PostForm/>
+      <h1>{{postsCount}}</h1>
+      <div class="post" v-for="post in allPosts" :key="post.id">
+        <h2>{{post.title}}</h2>
+        <p>{{post.body}}</p>
+      </div>
+    </div>
 </div>
 </template>
 
 <script>
-
+import {mapGetters, mapActions} from 'vuex';
+import PostForm from '../PostForm.vue'
+  export default {
+    name: "home",
+    computed: mapGetters(['allPosts', 'postsCount']),
+    methods: mapActions(['fetchPosts']),
+    components: {PostForm},
+    async mounted() {
+      this.fetchPosts();
+    }
+  };
 </script>
 
 <style>
+#home {
+  text-align: center;
+  color: #2c3e50;
+  margin: 60px auto;
+  width: 400px;
+}
+.post {
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
 .background {
   background-color: #F2F4F5;
 }
