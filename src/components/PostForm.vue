@@ -2,7 +2,7 @@
     <form @submit.prevent="submit">
         <input type="text" placeholder="title" v-model="title">
         <input type="text" placeholder="body" v-model="body">
-        <button type="submit">Create post</button>
+        <button type="submit">Создать пост</button>
     </form>
 </template>
 
