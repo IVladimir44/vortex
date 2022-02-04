@@ -217,6 +217,7 @@ export default {
     border-radius: 6px;
     font-family: sans-serif;
     text-size-adjust: 100%;
+    padding: 15px;
 }
 .photo_wrapper {
     padding: 32px;
@@ -474,4 +475,5 @@ input[type="checkbox"]:checked + label:before {
     padding: 10px 30px 8px;
     width: auto;
 }
+input[type="text"]{padding: 15px;}
 </style>
