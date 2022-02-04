@@ -6,8 +6,8 @@
         <div class="wrapper">
             <div class="name_category">
                 <p class="details">Опишите в подробностях</p>
-                <p class="name">Укажите название*</p>
-                <input class="name_field" type="text" placeholder="Например, Iphone X" />
+                <label class="name" for="name">Укажите название*</label>
+                <input class="name_field" id="name" type="text" placeholder="Например, Iphone X" v-model="productName" required />
                 <div class="category">
                     <label for="category">Категория*</label>
                 </div>
@@ -86,22 +86,22 @@
     <div class="wrapper">
         <div class="description">
             <p class="description_title">Описание*</p>
-            <textarea class="description_field" name="" placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание" cols="30" rows="10"></textarea>
+            <textarea class="description_field" name="" placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание" cols="30" rows="10" v-model="description" required ></textarea>
         </div>
     </div>
     <div class="wrapper">
         <div class="contacts">
             <p class="contacts_title">Контактная информация</p>
             <p class="contacts_location">Местоположение*</p>
-            <input class="location_field" type="text" placeholder="" />
+            <input class="location_field" type="text" placeholder="" v-model="location" required />
             <p class="contacts_Email">Email-адрес</p>
-            <input class="Email_field" type="text" placeholder="" />
+            <input class="Email_field" type="text" placeholder="" v-model="email" required />
             <p class="contacts_phone">Номер телефона</p>
-            <input class="phone_field" type="text" placeholder="" />
+            <input class="phone_field" type="text" placeholder="" v-model="phone" />
         </div>
     </div>
     <div class="convention">
-        <input type="checkbox" id="box-1">
+        <input type="checkbox" id="box-1" v-model="agreeWithSendCommerce">
         <label for="box-1">Я согласен и даю согласие на получение коммерческих и маркетинговых сообщений (например, информационного бюллетеня, SMS) от vortex Group, связанных с ними организаций и их деловых партнеров посредством электронной связи и телекоммуникаций на мое устройство.</label>
     </div>
     <div class="wrapper">
@@ -117,7 +117,13 @@
 export default {
     data() {
         return {
+            productName: '',
+            description: '',
+            location: '',
+            email: '',
+            phone: '',
             category: 'Electronics',
+            agreeWithSendCommerce: false,
             categories: [
                 {
                     label: 'Электроника',
