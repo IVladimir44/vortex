@@ -86,18 +86,18 @@
     <div class="wrapper">
         <div class="description">
             <p class="description_title">Описание*</p>
-            <textarea class="description_field" name="" placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание" cols="30" rows="10" v-model="description" required ></textarea>
+            <textarea class="description_field" name="" placeholder="Подумайте, какие подробности вы хотели бы узнать из объявления. И добавьте их в описание" cols="30" rows="11" v-model="description" required ></textarea>
         </div>
     </div>
     <div class="wrapper">
         <div class="contacts">
             <p class="contacts_title">Контактная информация</p>
             <p class="contacts_location">Местоположение*</p>
-            <input class="location_field" type="text" placeholder="" v-model="location" required />
+            <input class="location_field" type="text" placeholder="Населённый пункт" v-model="location" required />
             <p class="contacts_Email">Email-адрес</p>
-            <input class="Email_field" type="text" placeholder="" v-model="email" required />
+            <input class="Email_field" type="text" placeholder="vortex@gmail.com" v-model="email" required />
             <p class="contacts_phone">Номер телефона</p>
-            <input class="phone_field" type="text" placeholder="" v-model="phone" />
+            <input class="phone_field" type="text" placeholder="+38 (.........)" v-model="phone" />
         </div>
     </div>
     <div class="convention">
@@ -217,7 +217,7 @@ export default {
     border-radius: 6px;
     font-family: sans-serif;
     text-size-adjust: 100%;
-    padding: 15px;
+    padding: 10px;
 }
 .photo_wrapper {
     padding: 32px;
@@ -327,7 +327,7 @@ export default {
     font-size: 16px;
     line-height: 20px;
     outline: 0px;
-    padding: 16px 48px 0px 16px;
+    padding: 15px 15px 0px 16px;
     resize: none;
     width: 100%;
     font-family: sans-serif;
