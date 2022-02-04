@@ -8,8 +8,18 @@
                 <p class="details">Опишите в подробностях</p>
                 <p class="name">Укажите название*</p>
                 <input class="name_field" type="text" placeholder="Например, Iphone X" />
-                <p class="category">Категория*</p>
-                <input class="category_field" type="text" placeholder="Выберите категорию" />
+                <div class="category">
+                    <label for="category">Категория*</label>
+                </div>
+                    <select class="category_field" id="category" v-model="category">
+                        <option 
+                        v-for="(category, index) in categories"
+                        :value="category.value"
+                        :key="index"
+                        >
+                            {{category.label}}
+                        </option>
+                    </select>
             </div>
         </div>
     <div class="wrapper">
@@ -104,6 +114,31 @@
 </template>
 
 <script>
+export default {
+    data() {
+        return {
+            category: 'Electronics',
+            categories: [
+                {
+                    label: 'Электроника',
+                    value: 'Electronics'
+                },
+                {
+                    label: 'Недвижимость',
+                    value: 'House'
+                },
+                {
+                    label: 'Мода и стиль',
+                    value: 'Fashion&Style'
+                },
+                {
+                    label: 'Авто',
+                    value: 'Car'
+                },
+            ]
+        }
+    }
+}
 </script>
 
 <style scoped>
