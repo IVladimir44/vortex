@@ -1,17 +1,23 @@
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
+function isValidToken(token) {
+    return token !== '';
+}
 
 export default {
     namespaced: true,
     state() {
         return {
             email: '',
-            uid: '',
+            user: '',
         };
     },
     getters: {
         isauth(state) {
-            return state.uid !== '';
+            return isValidToken(state.user);
+        },
+        email(state) {
+            return state.user?.email;
         }
     },
     mutations: {
@@ -23,7 +29,7 @@ export default {
             const auth = getAuth();
             return signInWithEmailAndPassword(auth, data.email, data.password)
                 .then((userCredential) => {
-                    ctx.state.uid = userCredential.user.uid;
+                    ctx.state.user = userCredential.user;
                     return 'ok';
                 })
                 .catch((error) => {
@@ -36,7 +42,7 @@ export default {
             const auth = getAuth();
             return createUserWithEmailAndPassword(auth, data.email, data.password)
                 .then((userCredential) => {
-                    ctx.state.uid = userCredential.user.uid;
+                    ctx.state.user = userCredential.user;
                     return 'ok';
                 })
                 .catch((error) => {
@@ -46,8 +52,10 @@ export default {
                 });
         },
         logout(ctx) {
-            ctx.state.email = '';
-            ctx.state.uid = '';
+            const auth = getAuth();
+            signOut(auth).then(() => {
+                ctx.state.user = '';
+            })
         }
     }
 

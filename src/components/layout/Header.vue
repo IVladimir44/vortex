@@ -16,18 +16,25 @@
             <div class="login">
                 <!-- <router-link :to="{ name: 'Login' }">Мой профиль</router-link> -->
                 <button
-                class="button"
-                @click="showModal"
-                >Регистрация</button>
+                    class="button"
+                    v-if="!$store.getters['user/isauth']"
+                    @click="showModal"
+                >
+                    Регистрация
+                </button>
+                <button 
+                    v-else
+                    @click="$store.dispatch('user/logout')"
+                >
+                    {{$store.getters['user/email']}}
+                </button>
             </div>
             <div class="add_product">
                 <router-link :to="{ name: 'AddProduct' }">Подать объявление</router-link>
             </div>
             <my-modal 
-            v-if = "isVisible"
-            @closeModal= "closeModal"
-            >
-            <my-login></my-login>
+            v-if = "isVisible">
+            <my-login @close-modal= "closeModal"></my-login>
             </my-modal>
         </div>
     </div>

@@ -1,5 +1,5 @@
 <template>
-    <!-- <div class="background">
+  <!-- <div class="background">
         <div class="row">
             <div class="col-md-6 login-form">
                 <h3>Вход</h3>
@@ -20,58 +20,97 @@
             </div>
         </div>
     </div> -->
-    <div class="login">
-        <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model.trim="email">
-    <div id="emailHelp" class="form-text">Мы никогда не будем делиться вашей электронной почтой с кем-либо еще.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Пароль</label>
-    <input required type="password" class="form-control" id="exampleInputPassword1" v-model.trim="password">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" v-model="agreeWithSendEmail">
-    <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
-  </div>
-<div class="wrapper_form-check">
-  <div class="form-check">
-  <input class="form-check-input" type="radio" value="male" name="flexRadioDefault" id="flexRadioDefault1" v-model="gendere">
-  <label class="form-check-label" for="flexRadioDefault1">
-    Мужчина
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="radio" value="female" name="flexRadioDefault" id="flexRadioDefault2" v-model="gendere" checked>
-  <label class="form-check-label" for="flexRadioDefault2">
-    Женщина
-  </label>
-</div>
-</div>
-  <button @click.prevent="login" class="btn btn-primary">Войти</button>
-</form>
+<div class="login">
+    <form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+        v-model.trim="email"
+        />
+        <div id="emailHelp" class="form-text">
+        Мы никогда не будем делиться вашей электронной почтой с кем-либо еще.
+        </div>
     </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Пароль</label>
+        <input
+        required
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        v-model.trim="password"
+        />
+    </div>
+    <div class="mb-3 form-check">
+        <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        v-model="agreeWithSendEmail"
+        />
+        <label class="form-check-label" for="exampleCheck1"
+        >Запомнить меня</label
+        >
+    </div>
+    <div class="wrapper_form-check">
+        <div class="form-check">
+        <input
+            class="form-check-input"
+            type="radio"
+            value="male"
+            name="flexRadioDefault"
+            id="flexRadioDefault1"
+            v-model="gendere"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+            Мужчина
+        </label>
+        </div>
+        <div class="form-check">
+        <input
+            class="form-check-input"
+            type="radio"
+            value="female"
+            name="flexRadioDefault"
+            id="flexRadioDefault2"
+            v-model="gendere"
+            checked
+        />
+        <label class="form-check-label" for="flexRadioDefault2">
+            Женщина
+        </label>
+        </div>
+    </div>
+    <button @click.prevent="login" class="btn btn-primary">Войти</button>
+    </form>
+</div>
 </template>
 
 <script>
 export default {
     name: "myLogin",
     data() {
-        return {
-            email: '',
-            password: '',
-            agreeWithSendEmail: false,
-            gendere:'male',
-        }
+    return {
+        email: "",
+        password: "",
+        agreeWithSendEmail: false,
+        gendere: "male",
+    };
     },
     methods: {
-        login() {
-            this.$store.dispatch('user/login', { email: this.email, password: this.password }).then((result) => {
-                console.log('login result', result)
-            })
-        }
-    }
+    login() {
+        this.$store
+        .dispatch("user/login", { email: this.email, password: this.password })
+        .then((result) => {
+            console.log("login result", result);
+            this.$emit("closeModal");
+        });
+    },
+    },
 };
 </script>
 
