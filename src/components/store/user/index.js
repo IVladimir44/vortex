@@ -17,11 +17,14 @@ export default {
             return isValidToken(state.user);
         },
         email(state) {
-            return state.user?.email;
+            return state.email;
         }
     },
     mutations: {
-
+        setUser(state, data) {
+            state.email = data.email;
+            state.user = data.uid;
+        }
     },
     actions: {
         login(ctx, data) {

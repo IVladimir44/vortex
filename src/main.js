@@ -8,14 +8,11 @@ import Like from './components/pages/Like.vue';
 import Login from './components/pages/Login.vue';
 import AddProduct from './components/pages/AddProduct.vue';
 import store from './components/store'
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCaxQZNDJaMKXFcavCum8XI_bBnJ_XfJrI",
   authDomain: "vortex-344b6.firebaseapp.com",
@@ -28,22 +25,31 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-getAnalytics(app);
 
 
 import { createWebHistory, createRouter } from "vue-router";
 
 const routes = [
     { path: '/', name: 'Home', component: Home },
-    { path: '/', name: 'Messages', component: Messages },
-    { path: '/', name: 'Like', component: Like },
-    { path: '/', name: 'Login', component: Login },
-    { path: '/', name: 'AddProduct', component: AddProduct },
+    { path: '/messages', name: 'Messages', component: Messages },
+    { path: '/like', name: 'Like', component: Like },
+    { path: '/login', name: 'Login', component: Login },
+    { path: '/add', name: 'AddProduct', component: AddProduct },
 ];
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+});
+
+const auth = getAuth();
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    store.commit('user/setUser', user);
+  } else {
+    store.dispatch('user/logout');
+  }
 });
 
 const app = createApp(App);
