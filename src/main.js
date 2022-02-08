@@ -11,11 +11,13 @@ import store from './components/store'
 
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getDatabase, ref, onValue} from "firebase/database";
 
 
 const firebaseConfig = {
   apiKey: "AIzaSyCaxQZNDJaMKXFcavCum8XI_bBnJ_XfJrI",
   authDomain: "vortex-344b6.firebaseapp.com",
+  databaseURL: "https://vortex-344b6-default-rtdb.asia-southeast1.firebasedatabase.app/",
   projectId: "vortex-344b6",
   storageBucket: "vortex-344b6.appspot.com",
   messagingSenderId: "345306529159",
@@ -25,6 +27,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
+
+
+const db = getDatabase();
+const postsRef = ref(db, '/posts');
+onValue(postsRef, (snapshot) => {
+  console.log("snapshot: ", snapshot.val());
+});
 
 
 import { createWebHistory, createRouter } from "vue-router";
