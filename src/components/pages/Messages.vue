@@ -1,5 +1,25 @@
 <template>
-<div class="background">
+  <div class="wrapper">
+    <h1>Объявления</h1>
+    <h4>Найдено: {{ $store.getters["posts/count"] }}</h4>
+    <div class="post-cards">
+      <div class="post-card" v-for="post in postsArr" :key="post.id">
+        <div class="block-1">
+          <div class="posts-form">
+              {{ post.title }}
+            <p class="text">
+            {{ post.text }}
+            </p>
+          </div>
+          <div class="btn-block">
+            <!-- <button-comp @click="doDelete(post.title)">Удалить</button-comp> -->
+            <!-- <button-comp >Редактировать</button-comp> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="background">
     <div class="title_wrapper">
         <p class="messages_title">Сообщения</p>
     </div>
@@ -13,15 +33,36 @@
             </ul>
         </div>
     </div>
-</div>
+</div> -->
 </template>
 
 <script>
-
+export default {
+  computed: {
+    postsArr() {
+      return this.$store.getters["posts/all"];
+    },
+  },
+  methods: {
+    doDelete(title) {
+      this.$store.dispatch("posts/deletePost", title);
+    },
+  },
+};
 </script>
 
 <style scoped>
-.background {
+.post-card {
+    border: 2px solid #012F34;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.wrapper {
+    display: block;
+    max-width: 600px;
+}
+/* .background {
     background-color: #F2F4F5;
     padding-bottom: 40px;
 }
@@ -58,5 +99,5 @@ padding: 0;
     height: 38px;
     padding: 16px;
     background-color: #FFFF;
-}
+} */
 </style>

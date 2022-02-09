@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
+
 import Home from './components/pages/Home.vue';
 import Messages from './components/pages/Messages.vue';
 import Like from './components/pages/Like.vue';
@@ -32,7 +33,11 @@ initializeApp(firebaseConfig);
 const db = getDatabase();
 const postsRef = ref(db, '/posts');
 onValue(postsRef, (snapshot) => {
-  console.log("snapshot: ", snapshot.val());
+  console.log(snapshot.val());
+//   for (const [key, value] of Object.entries(postsObject)) {
+//     store.commit('posts/addPost', value, key);
+// }
+snapshot.val().forEach(item => store.commit('posts/addPost', item));
 });
 
 
